@@ -2315,4 +2315,90 @@ footer {
         height: 450px;
     }
 
+}/* =========================================
+   REAL SHOE IMAGES
+========================================= */
+
+.brand-image {
+    position: relative;
+    overflow: hidden;
+
+    background: #e9e9e9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        filter 0.8s;
+
+    filter: grayscale(100%);
+}
+
+
+/* DARK OVERLAY */
+
+.brand-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.45)
+        );
+
+    pointer-events: none;
+}
+
+
+/* HOVER */
+
+.brand-section:hover .brand-image img {
+    transform: scale(1.12);
+
+    filter: grayscale(0%);
+}
+
+
+/* SUBTLE IMAGE MOVEMENT */
+
+.brand-section:nth-child(odd) .brand-image img {
+    transform-origin: center;
+}
+
+.brand-section:nth-child(even) .brand-image img {
+    transform-origin: center;
+}
+
+.brand-section:hover .brand-image img {
+    transform:
+        scale(1.12)
+        rotate(1deg);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .brand-image {
+        height: 55vh;
+    }
+
+    .brand-image img {
+        object-fit: cover;
+    }
+
 }
