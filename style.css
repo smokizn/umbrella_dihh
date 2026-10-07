@@ -1,58 +1,34 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b0b0b;
-    color: #fff;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-button {
-    font: inherit;
-}
-
-
-/* =========================================================
+/* =========================
    NAVBAR
-========================================================= */
+========================= */
 
 header {
-    position: relative;
-    z-index: 100;
-    padding: 25px 6%;
-    background: #0b0b0b;
-    border-bottom: 1px solid #1c1c1c;
+    padding: 20px 10%;
 }
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .nav-links {
@@ -61,253 +37,778 @@ nav {
 }
 
 .nav-links a {
-    position: relative;
-    color: #888;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: color .3s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: width .3s ease;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
 .nav-links a:hover {
-    color: #fff;
+    opacity: 0.6;
 }
 
-.nav-links a:hover::after {
-    width: 100%;
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 50px 8%;
+
+    overflow: hidden;
 }
 
+.hero-text {
+    max-width: 550px;
+}
 
-/* =========================================================
-   COMMON
-========================================================= */
+.tagline {
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
 
-.section-label {
-    color: #666;
-    font-size: 11px;
-    letter-spacing: 5px;
+h1 {
+    font-size: 75px;
+    line-height: 0.95;
     margin-bottom: 25px;
 }
 
+h1 span {
+    color: white;
+}
+
+.description {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+
+button {
+    background: white;
+    color: black;
+
+    border: none;
+    padding: 15px 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    border-radius: 5px;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* SHOE */
+
+.hero-shoe {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.hero-shoe img {
+    width: 550px;
+    max-width: 100%;
+
+    transform: rotate(-15deg);
+}
+
+/* =========================
+   FEATURED
+========================= */
+
+.featured {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.shoe-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.shoe-cards article {
+    background: #1c1c1c;
+
+    padding: 30px;
+    width: 250px;
+
+    border-radius: 10px;
+}
+
+.shoe-cards h3 {
+    margin-bottom: 10px;
+}
+
+.shoe-cards p {
+    color: #aaa;
+}
+
+/* =========================
+   GENERAL PAGES
+========================= */
+
 .page {
     min-height: 80vh;
-    padding: 100px 8%;
+    padding: 70px 8%;
 }
 
 .page-heading {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .page-heading h1 {
-    font-size: clamp(60px, 10vw, 140px);
-    line-height: .8;
-    letter-spacing: -7px;
+    margin-bottom: 20px;
 }
 
 .page-heading p {
-    color: #777;
-    margin-top: 25px;
+    color: #aaa;
+    font-size: 18px;
 }
 
+/* =========================
+   BRANDS
+========================= */
 
-/* =========================================================
-   HOME — HERO
-========================================================= */
-
-.home-hero {
-    min-height: 88vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    padding: 60px 8%;
-}
-
-.hero-background {
-    position: absolute;
-    left: -30px;
-    bottom: -50px;
-
-    font-size: 28vw;
-    font-weight: 900;
-    line-height: .7;
-
-    color: #151515;
-    pointer-events: none;
-    user-select: none;
-}
-
-.home-content {
-    position: relative;
-    z-index: 5;
-    max-width: 600px;
-}
-
-.home-label {
-    color: #777;
-    font-size: 11px;
-    letter-spacing: 5px;
-    margin-bottom: 25px;
-}
-
-.home-content h1 {
-    font-size: clamp(75px, 10vw, 150px);
-    line-height: .78;
-    letter-spacing: -7px;
-    margin-bottom: 40px;
-}
-
-.home-content h1 span {
-    color: #777;
-}
-
-.home-description {
-    max-width: 450px;
-    color: #888;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 35px;
-}
-
-.hero-button {
-    display: inline-block;
-    padding: 16px 25px;
-
-    background: #fff;
-    color: #000;
-
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-
-    transition:
-        transform .3s ease,
-        padding .3s ease;
-}
-
-.hero-button:hover {
-    transform: translateY(-4px);
-    padding-left: 35px;
-    padding-right: 35px;
-}
-
-
-/* ---------- MAIN SHOE ---------- */
-
-.main-shoe {
-    position: absolute;
-    right: 4%;
-
-    width: 52%;
+.brands {
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    z-index: 3;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.main-shoe img {
-    width: 650px;
-    max-width: 100%;
+.brand-card {
+    width: 280px;
+    padding: 25px;
 
-    transform: rotate(-15deg);
+    background: #1c1c1c;
+    border-radius: 12px;
 
-    filter: drop-shadow(
-        0 40px 30px rgba(0, 0, 0, .8)
-    );
+    text-align: center;
 
-    animation: heroFloat 5s ease-in-out infinite;
+    transition: 0.2s;
 }
 
-.shoe-glow {
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    border-radius: 50%;
-
-    background: #fff;
-    opacity: .025;
-    filter: blur(100px);
+.brand-card:hover {
+    transform: translateY(-5px);
 }
 
-@keyframes heroFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(-15deg);
+.brand-card img {
+    width: 380px;
+    height: 250px;
+
+    object-fit: contain;
+
+    background: white;
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+.brand-card h2 {
+    margin-bottom: 8px;
+}
+
+.brand-card p {
+    color: #aaa;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about h1 {
+    margin-bottom: 30px;
+}
+
+.about p {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 70px auto 0;
+
+    padding: 30px;
+
+    background: #1c1c1c;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #aaa;
+    margin: 10px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+
+    color: #666;
+    border-top: 1px solid #222;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
     }
 
-    50% {
-        transform: translateY(-25px) rotate(-10deg);
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .hero-shoe {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .shoe-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page {
+        padding: 50px 20px;
     }
 }
+/* =========================
+   BIG BRAND PAGE
+========================= */
 
-.hero-side-text {
-    position: absolute;
-    right: 20px;
-    top: 50%;
+.brand-page {
+    padding: 60px 6%;
+}
 
-    transform: rotate(90deg);
+.brand-title {
+    margin-bottom: 50px;
+}
 
-    color: #333;
-    font-size: 11px;
+.brand-title p {
+    font-size: 14px;
     letter-spacing: 5px;
+    color: #777;
+    margin-bottom: 10px;
 }
 
-.hero-scroll {
-    position: absolute;
-    left: 8%;
-    bottom: 30px;
-
-    color: #444;
-    font-size: 10px;
-    letter-spacing: 4px;
+.brand-title h1 {
+    font-size: clamp(50px, 9vw, 130px);
+    line-height: 0.8;
 }
 
 
-/* =========================================================
-   TICKER
-========================================================= */
+/* BRAND GRID */
 
-.ticker {
+.brand-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    grid-template-rows: 450px 450px;
+
+    gap: 15px;
+}
+
+
+/* BRAND IMAGE */
+
+.big-brand {
+    position: relative;
     overflow: hidden;
 
-    margin: 20px 0;
-    padding: 25px 0;
+    display: block;
 
-    background: #fff;
-    color: #000;
+    text-decoration: none;
+    color: white;
 
-    transform: rotate(-2deg) scale(1.02);
+    background: #222;
 }
 
-.ticker-track {
-    display: flex;
-    width: max-content;
 
-    animation: ticker 18s linear infinite;
+/* NIKE BIG */
+
+.big-brand.nike {
+    grid-row: span 2;
 }
 
-.ticker span {
-    margin: 0 40px;
 
-    font-size: 20px;
-    font-weight: 900;
+/* IMAGE */
+
+.big-brand img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* DARK GRADIENT */
+
+.big-brand::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 35%,
+        rgba(0, 0, 0, 0.9)
+    );
+}
+
+
+/* TEXT */
+
+.brand-overlay {
+    position: absolute;
+
+    left: 35px;
+    right: 35px;
+    bottom: 30px;
+
+    z-index: 2;
+}
+
+.brand-overlay span {
+    font-size: 14px;
+    color: #aaa;
     letter-spacing: 3px;
 }
 
-@keyframes ticker {
+.brand-overlay h2 {
+    font-size: clamp(45px, 6vw, 90px);
+    line-height: 0.9;
+
+    margin: 8px 0;
+}
+
+.brand-overlay p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ccc;
+}
+
+
+/* HOVER */
+
+.big-brand:hover img {
+    transform: scale(1.08);
+}
+
+.big-brand:hover .brand-overlay h2 {
+    letter-spacing: 5px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .brand-page {
+        padding: 40px 20px;
+    }
+
+    .brand-title h1 {
+        font-size: 55px;
+    }
+
+    .brand-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .big-brand,
+    .big-brand.nike {
+        height: 400px;
+    }
+
+}
+/* =========================================
+   ANIMATED ABOUT PAGE
+========================================= */
+
+
+/* HERO */
+
+.about-hero {
+    min-height: 90vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 80px 8%;
+}
+
+
+/* HUGE BACKGROUND TEXT */
+
+.background-text {
+    position: absolute;
+
+    font-size: 25vw;
+    font-weight: 900;
+
+    color: #181818;
+
+    left: -30px;
+    bottom: -40px;
+
+    line-height: 0.7;
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.about-hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 800px;
+}
+
+.about-label,
+.section-label {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #888;
+
+    margin-bottom: 20px;
+}
+
+
+.about-hero h1 {
+    font-size: clamp(55px, 8vw, 120px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+.about-hero h1 span,
+.values h2 span,
+.about-end h2 span {
+    color: #888;
+}
+
+
+.about-intro {
+    max-width: 500px;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* BUTTON */
+
+.scroll-button {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    transition: 0.3s;
+}
+
+.scroll-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================================
+   FLOATING SHOES
+========================================= */
+
+.floating-shoe {
+    position: absolute;
+
+    width: 300px;
+
+    z-index: 2;
+
+    opacity: 0.85;
+
+    pointer-events: none;
+
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+}
+
+
+/* FIRST */
+
+.shoe-one {
+    right: 5%;
+    top: 15%;
+
+    transform: rotate(-20deg);
+
+    animation: floatOne 6s ease-in-out infinite;
+}
+
+
+/* SECOND */
+
+.shoe-two {
+    right: 25%;
+    bottom: 5%;
+
+    width: 220px;
+
+    transform: rotate(15deg);
+
+    opacity: 0.45;
+
+    animation: floatTwo 7s ease-in-out infinite;
+}
+
+
+/* THIRD */
+
+.shoe-three {
+    right: -5%;
+    bottom: 30%;
+
+    width: 180px;
+
+    transform: rotate(30deg);
+
+    opacity: 0.25;
+
+    animation: floatThree 8s ease-in-out infinite;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes floatOne {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-20deg);
+    }
+
+    50% {
+        transform: translateY(-35px) rotate(-10deg);
+    }
+
+}
+
+
+@keyframes floatTwo {
+
+    0%, 100% {
+        transform: translateY(0) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(30px) rotate(5deg);
+    }
+
+}
+
+
+@keyframes floatThree {
+
+    0%, 100% {
+        transform: translateY(0) rotate(30deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(40deg);
+    }
+
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story {
+    min-height: 80vh;
+
+    display: grid;
+
+    grid-template-columns: 200px 1fr;
+
+    gap: 80px;
+
+    padding: 150px 12%;
+
+    border-top: 1px solid #222;
+}
+
+
+.story-number {
+    font-size: 80px;
+
+    color: #333;
+
+    font-weight: bold;
+}
+
+
+.story-content {
+    max-width: 800px;
+}
+
+
+.story-content h2 {
+    font-size: clamp(50px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    margin-bottom: 40px;
+}
+
+
+.story-content p {
+    color: #999;
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   MOVING SHOE MARQUEE
+========================================= */
+
+.shoe-marquee {
+    overflow: hidden;
+
+    padding: 60px 0;
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+
+    transform: rotate(-2deg);
+
+    background: #151515;
+}
+
+
+.marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: marquee 18s linear infinite;
+}
+
+
+.marquee-track img {
+    width: 220px;
+
+    height: 140px;
+
+    object-fit: contain;
+
+    margin: 0 30px;
+
+    filter: grayscale(1);
+
+    transition: 0.3s;
+}
+
+
+.marquee-track img:hover {
+    filter: grayscale(0);
+
+    transform: scale(1.15) rotate(5deg);
+}
+
+
+@keyframes marquee {
+
     from {
         transform: translateX(0);
     }
@@ -315,182 +816,1199 @@ nav {
     to {
         transform: translateX(-50%);
     }
+
 }
 
 
-/* =========================================================
-   HOME — INTRO
-========================================================= */
+/* =========================================
+   VALUES
+========================================= */
+
+.values {
+    padding: 150px 8%;
+}
+
+
+.values > h2 {
+    font-size: clamp(50px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    margin-bottom: 80px;
+}
+
+
+.value-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.value-grid article {
+    padding: 40px;
+
+    min-height: 300px;
+
+    background: #181818;
+
+    border: 1px solid #252525;
+
+    transition: 0.4s;
+}
+
+
+.value-grid article:hover {
+    transform: translateY(-10px);
+
+    background: #202020;
+}
+
+
+.value-grid span {
+    color: #555;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+}
+
+
+.value-grid h3 {
+    font-size: 35px;
+
+    margin: 70px 0 15px;
+}
+
+
+.value-grid p {
+    color: #888;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FINAL SECTION
+========================================= */
+
+.about-end {
+    min-height: 70vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+}
+
+
+.end-shoe {
+    position: absolute;
+
+    width: 700px;
+
+    max-width: 80%;
+
+    opacity: 0.12;
+
+    transform: rotate(-15deg);
+
+    animation: finalFloat 5s ease-in-out infinite;
+}
+
+
+.about-end div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-end p {
+    letter-spacing: 5px;
+
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+.about-end h2 {
+    font-size: clamp(50px, 8vw, 110px);
+
+    line-height: 0.9;
+
+    margin-bottom: 40px;
+}
+
+
+.about-end a {
+    color: white;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 5px;
+}
+
+
+@keyframes finalFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(-8deg);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .about-hero {
+        min-height: 80vh;
+
+        padding: 60px 20px;
+    }
+
+
+    .about-hero h1 {
+        letter-spacing: -3px;
+    }
+
+
+    .floating-shoe {
+        opacity: 0.2;
+    }
+
+
+    .shoe-one {
+        right: -100px;
+        top: 10%;
+    }
+
+
+    .shoe-two {
+        right: -50px;
+    }
+
+
+    .story {
+        display: block;
+
+        padding: 100px 20px;
+    }
+
+
+    .story-number {
+        margin-bottom: 40px;
+    }
+
+
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .values {
+        padding: 100px 20px;
+    }
+
+
+    .value-grid article {
+        min-height: 250px;
+    }
+
+
+    .about-end {
+        padding: 80px 20px;
+    }
+
+}
+/* =========================================
+   ANIMATED BRANDS PAGE
+========================================= */
+
+.brands-page {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.brands-hero {
+    min-height: 85vh;
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.brands-hero::before {
+    content: "03";
+
+    position: absolute;
+
+    right: 5%;
+    top: 20%;
+
+    font-size: 30vw;
+
+    font-weight: 900;
+
+    color: #181818;
+
+    line-height: 0.7;
+
+    z-index: -1;
+}
+
+
+.brands-hero p {
+    letter-spacing: 6px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.brands-hero h1 {
+    font-size: clamp(80px, 15vw, 220px);
+
+    line-height: 0.75;
+
+    letter-spacing: -10px;
+
+    margin: 0;
+}
+
+
+.brands-hero h1 span {
+    color: #777;
+}
+
+
+.scroll-indicator {
+    margin-top: 80px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   BRAND SECTIONS
+========================================= */
+
+.brand-section {
+    min-height: 90vh;
+
+    display: grid;
+
+    grid-template-columns: 60% 40%;
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-top: 1px solid #222;
+
+    transition: 0.5s;
+}
+
+
+.brand-section.reverse {
+    grid-template-columns: 40% 60%;
+}
+
+
+.brand-section.reverse .brand-image {
+    order: 2;
+}
+
+
+.brand-section.reverse .brand-info {
+    order: 1;
+}
+
+
+/* =========================================
+   BRAND IMAGE
+========================================= */
+
+.brand-image {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #181818;
+}
+
+
+.brand-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.4)
+    );
+
+    pointer-events: none;
+}
+
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        filter 0.8s;
+
+    filter: grayscale(100%);
+}
+
+
+.brand-section:hover .brand-image img {
+    transform: scale(1.08);
+
+    filter: grayscale(0%);
+}
+
+
+/* =========================================
+   BRAND INFO
+========================================= */
+
+.brand-info {
+    position: relative;
+
+    padding: 80px 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #111;
+}
+
+
+.brand-number {
+    position: absolute;
+
+    top: 50px;
+    left: 60px;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #555;
+}
+
+
+.brand-info h2 {
+    font-size: clamp(60px, 8vw, 130px);
+
+    line-height: 0.8;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+
+    transition: 0.5s;
+}
+
+
+.brand-section:hover .brand-info h2 {
+    transform: translateX(15px);
+
+    letter-spacing: -2px;
+}
+
+
+.brand-info p {
+    color: #777;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 50px;
+}
+
+
+.explore {
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    width: fit-content;
+
+    border-bottom: 1px solid #555;
+
+    padding-bottom: 8px;
+
+    transition: 0.3s;
+}
+
+
+.brand-section:hover .explore {
+    border-color: white;
+
+    padding-right: 15px;
+}
+
+
+/* =========================================
+   DIFFERENT BRAND FEEL
+========================================= */
+
+.brand-section:nth-of-type(2) .brand-info {
+    background: #151515;
+}
+
+
+.brand-section:nth-of-type(3) .brand-info {
+    background: #0e0e0e;
+}
+
+
+/* =========================================
+   END SECTION
+========================================= */
+
+.brands-end {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    border-top: 1px solid #222;
+}
+
+
+.brands-end p {
+    color: #666;
+
+    letter-spacing: 6px;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.brands-end h2 {
+    font-size: clamp(55px, 9vw, 130px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 50px;
+}
+
+
+.brands-end h2 span {
+    color: #777;
+}
+
+
+.brands-end a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 8px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .brands-hero {
+        min-height: 70vh;
+
+        padding: 70px 20px;
+    }
+
+
+    .brands-hero h1 {
+        font-size: 80px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .brand-section,
+    .brand-section.reverse {
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+
+    .brand-section.reverse .brand-image,
+    .brand-section.reverse .brand-info {
+        order: initial;
+    }
+
+
+    .brand-image {
+        height: 55vh;
+    }
+
+
+    .brand-info {
+        min-height: 400px;
+
+        padding: 60px 30px;
+    }
+
+
+    .brand-number {
+        left: 30px;
+        top: 30px;
+    }
+
+
+    .brand-info h2 {
+        font-size: 70px;
+    }
+
+
+    .brands-end h2 {
+        font-size: 60px;
+    }
+
+}
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-hero {
+    min-height: 88vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 60px 8%;
+}
+
+
+/* HUGE BACKGROUND */
+
+.hero-background {
+    position: absolute;
+
+    left: -30px;
+    bottom: -50px;
+
+    font-size: 28vw;
+
+    font-weight: 900;
+
+    line-height: 0.7;
+
+    color: #181818;
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.home-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 600px;
+}
+
+
+.home-label {
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+.home-content h1 {
+    font-size: clamp(75px, 10vw, 150px);
+
+    line-height: 0.78;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 40px;
+}
+
+
+.home-content h1 span {
+    color: #777;
+}
+
+
+.home-description {
+    color: #888;
+
+    max-width: 450px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* HERO BUTTON */
+
+.hero-button {
+    display: inline-block;
+
+    color: black;
+
+    background: white;
+
+    text-decoration: none;
+
+    padding: 16px 25px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+    padding-left: 35px;
+
+    padding-right: 35px;
+}
+
+
+/* =========================================
+   MAIN SHOE
+========================================= */
+
+.main-shoe {
+    position: absolute;
+
+    right: 5%;
+
+    width: 52%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 3;
+}
+
+
+.main-shoe img {
+    width: 650px;
+
+    max-width: 100%;
+
+    transform: rotate(-15deg);
+
+    filter: drop-shadow(
+        0 40px 30px rgba(0, 0, 0, 0.8)
+    );
+
+    animation: heroShoeFloat 5s ease-in-out infinite;
+}
+
+
+/* GLOW */
+
+.shoe-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background: white;
+
+    opacity: 0.03;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+}
+
+
+@keyframes heroShoeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(-10deg);
+    }
+
+}
+
+
+/* SIDE TEXT */
+
+.hero-side-text {
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    transform: rotate(90deg);
+
+    color: #444;
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+}
+
+
+/* SCROLL */
+
+.hero-scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 8%;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================
+   TICKER
+========================================= */
+
+.ticker {
+    overflow: hidden;
+
+    padding: 25px 0;
+
+    background: white;
+
+    color: black;
+
+    transform: rotate(-2deg) scale(1.02);
+
+    margin: 20px 0;
+}
+
+
+.ticker-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: tickerMove 18s linear infinite;
+}
+
+
+.ticker span {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin: 0 40px;
+}
+
+
+@keyframes tickerMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
 
 .home-intro {
     min-height: 80vh;
 
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 70px;
-    align-items: center;
+
+    grid-template-columns: 200px 1fr;
+
+    gap: 80px;
 
     padding: 150px 12%;
+
+    align-items: center;
 }
 
+
 .intro-number {
-    color: #292929;
     font-size: 80px;
-    font-weight: 900;
+
+    color: #333;
+
+    font-weight: bold;
 }
+
+
+.section-label {
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
 
 .home-intro h2 {
     font-size: clamp(55px, 8vw, 120px);
-    line-height: .82;
+
+    line-height: 0.82;
+
     letter-spacing: -5px;
+
     margin-bottom: 40px;
 }
 
+
 .home-intro h2 span {
-    color: #666;
+    color: #777;
 }
+
 
 .intro-text {
     max-width: 600px;
 
     color: #888;
+
     font-size: 18px;
+
     line-height: 1.8;
 }
 
 
-/* =========================================================
-   HOME — FEATURED
-========================================================= */
+/* =========================================
+   FEATURED
+========================================= */
 
 .home-featured {
     padding: 120px 8%;
-    border-top: 1px solid #1c1c1c;
+
+    border-top: 1px solid #222;
 }
+
 
 .featured-heading {
     display: flex;
+
     justify-content: space-between;
+
     align-items: end;
+
     margin-bottom: 60px;
 }
 
+
 .featured-heading h2 {
     font-size: clamp(60px, 8vw, 120px);
-    line-height: .8;
+
+    line-height: 0.8;
+
     letter-spacing: -5px;
 }
 
+
 .featured-heading h2 span {
-    color: #666;
+    color: #777;
 }
+
 
 .featured-heading a {
     color: #777;
 
+    text-decoration: none;
+
     font-size: 11px;
+
     letter-spacing: 3px;
 
     border-bottom: 1px solid #444;
+
     padding-bottom: 8px;
-
-    transition: color .3s ease;
 }
 
-.featured-heading a:hover {
-    color: #fff;
-}
 
 .featured-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 15px;
 }
 
+
 .featured-item {
-    display: block;
+    color: white;
+
+    text-decoration: none;
 }
+
 
 .featured-image {
     height: 500px;
+
     overflow: hidden;
-    background: #151515;
+
+    background: #181818;
 }
+
 
 .featured-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+
     filter: grayscale(1);
 
     transition:
-        transform .7s ease,
-        filter .7s ease;
+        transform 0.7s,
+        filter 0.7s;
 }
 
-.featured-item:hover img {
+
+.featured-item:hover .featured-image img {
     transform: scale(1.08);
+
     filter: grayscale(0);
 }
+
 
 .featured-info {
     padding: 25px 0;
 }
 
+
 .featured-info span {
     color: #555;
+
     font-size: 11px;
+
     letter-spacing: 3px;
 }
 
-.featured-info h3 {
-    margin: 15px 0 25px;
 
+.featured-info h3 {
     font-size: 35px;
-    line-height: .9;
+
+    line-height: 0.9;
+
+    margin: 15px 0 25px;
 }
+
 
 .featured-info p {
     color: #777;
+
     font-size: 11px;
+
     letter-spacing: 3px;
 }
 
 
-/* =========================================================
-   HOME — FINAL CTA
-========================================================= */
+/* =========================================
+   FINAL CTA
+========================================= */
 
 .home-end {
     min-height: 80vh;
 
     position: relative;
+
     overflow: hidden;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
-    border-top: 1px solid #1c1c1c;
+    border-top: 1px solid #222;
 }
+
 
 .end-floating-shoe {
     position: absolute;
 
     width: 750px;
+
     max-width: 80%;
 
-    opacity: .1;
+    opacity: 0.1;
 
     transform: rotate(-15deg);
 
-    animation: finalFloat 6s ease-in-out infinite;
+    animation: finalShoe 6s ease-in-out infinite;
 }
 
-@keyframes finalFloat {
+
+.home-end div {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.home-end p {
+    color: #666;
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+
+    margin-bottom: 25px;
+}
+
+
+.home-end h2 {
+    font-size: clamp(70px, 10vw, 150px);
+
+    line-height: 0.78;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 50px;
+}
+
+
+.home-end h2 span {
+    color: #777;
+}
+
+
+.home-end a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 8px;
+}
+
+
+@keyframes finalShoe {
+
     0%, 100% {
         transform: translateY(0) rotate(-15deg);
     }
@@ -498,43 +2016,306 @@ nav {
     50% {
         transform: translateY(-35px) rotate(-8deg);
     }
+
 }
 
-.home-end div {
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .home-hero {
+        min-height: 90vh;
+
+        padding: 50px 20px;
+
+        align-items: flex-start;
+    }
+
+
+    .home-content h1 {
+        font-size: 75px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .main-shoe {
+        right: -100px;
+
+        bottom: 30px;
+
+        width: 90%;
+
+        opacity: 0.35;
+    }
+
+
+    .hero-side-text {
+        display: none;
+    }
+
+
+    .home-intro {
+        display: block;
+
+        padding: 100px 20px;
+    }
+
+
+    .intro-number {
+        margin-bottom: 50px;
+    }
+
+
+    .home-featured {
+        padding: 100px 20px;
+    }
+
+
+    .featured-heading {
+        display: block;
+    }
+
+
+    .featured-heading a {
+        display: inline-block;
+
+        margin-top: 30px;
+    }
+
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .featured-image {
+        height: 450px;
+    }
+
+
+    .home-end h2 {
+        font-size: 70px;
+    }
+
+}   
+/* =========================================
+   BRAND VISUALS
+========================================= */
+
+.brand-image {
     position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292929 0%,
+            #111 65%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.brand-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid #333;
+
+    border-radius: 50%;
+
+    transition: 0.8s;
+}
+
+
+.brand-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border: 1px solid #222;
+
+    border-radius: 50%;
+
+    transition: 1s;
+}
+
+
+.brand-image img {
+    position: relative;
+
     z-index: 2;
-}
 
-.home-end p {
-    color: #666;
-    font-size: 11px;
-    letter-spacing: 5px;
-    margin-bottom: 25px;
-}
+    width: 55%;
 
-.home-end h2 {
-    font-size: clamp(70px, 10vw, 150px);
-    line-height: .78;
-    letter-spacing: -7px;
-    margin-bottom: 50px;
-}
+    max-width: 500px;
 
-.home-end h2 span {
-    color: #777;
-}
+    height: 250px;
 
-.home-end a {
-    color: #fff;
+    object-fit: contain;
 
-    font-size: 12px;
-    letter-spacing: 4px;
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        filter 0.8s;
 
-    border-bottom: 1px solid #fff;
-    padding-bottom: 8px;
+    filter:
+        drop-shadow(
+            0 30px 30px rgba(0,0,0,.7)
+        );
 }
 
 
-/* =========================================================
+/* HOVER */
+
+.brand-section:hover .brand-image img {
+    transform:
+        scale(1.18)
+        rotate(-3deg);
+
+    filter:
+        drop-shadow(
+            0 40px 50px rgba(0,0,0,.9)
+        );
+}
+
+
+.brand-section:hover .brand-image::before {
+    transform: scale(1.2);
+
+    border-color: #555;
+}
+
+
+.brand-section:hover .brand-image::after {
+    transform: scale(1.1);
+
+    border-color: #333;
+}
+
+
+/* DIFFERENT BACKGROUNDS */
+
+.brand-section:nth-of-type(2) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #292929,
+            #101010 70%
+        );
+}
+
+
+.brand-section:nth-of-type(3) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #242424,
+            #0d0d0d 70%
+        );
+}
+
+
+.brand-section:nth-of-type(4) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #303030,
+            #111 70%
+        );
+}
+
+
+.brand-section:nth-of-type(5) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #262626,
+            #0d0d0d 70%
+        );
+}
+
+
+.brand-section:nth-of-type(6) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #303030,
+            #111 70%
+        );
+}
+
+
+.brand-section:nth-of-type(7) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #0d0d0d 70%
+        );
+}
+
+
+.brand-section:nth-of-type(8) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #303030,
+            #111 70%
+        );
+}
+
+
+.brand-section:nth-of-type(9) .brand-image {
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #0d0d0d 70%
+        );
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .brand-image {
+        height: 55vh;
+    }
+
+    .brand-image img {
+        width: 65%;
+        height: 180px;
+    }
+
+    .brand-image::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .brand-image::after {
+        width: 450px;
+        height: 450px;
+    }
+
+}/* =========================================================
    BRANDS PAGE
 ========================================================= */
 
@@ -543,47 +2324,55 @@ nav {
 }
 
 
-/* ---------- BRANDS HERO ---------- */
+/* =========================================================
+   BRANDS HERO
+========================================================= */
 
 .brands-hero {
-    min-height: 85vh;
-
-    position: relative;
+    min-height: 80vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     padding: 100px 8%;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .brands-hero::before {
-    content: "03";
+    content: "07";
 
     position: absolute;
     right: 5%;
-    top: 20%;
+    top: 15%;
 
     font-size: 30vw;
     font-weight: 900;
     line-height: .7;
 
     color: #151515;
+
     z-index: -1;
 }
 
 .brands-hero p {
     color: #777;
 
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 6px;
+
     margin-bottom: 20px;
 }
 
 .brands-hero h1 {
     font-size: clamp(80px, 15vw, 220px);
+
     line-height: .75;
     letter-spacing: -10px;
+
+    margin: 0;
 }
 
 .brands-hero h1 span {
@@ -591,90 +2380,115 @@ nav {
 }
 
 .scroll-indicator {
-    margin-top: 80px;
+    margin-top: 70px;
 
     color: #555;
+
     font-size: 10px;
     letter-spacing: 4px;
 }
 
 
-/* ---------- BRAND SECTIONS ---------- */
+/* =========================================================
+   BRAND SECTION
+========================================================= */
 
 .brand-section {
-    min-height: 90vh;
+    min-height: 85vh;
 
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 58% 42%;
 
     border-top: 1px solid #1c1c1c;
 
-    color: #fff;
+    color: white;
+
+    transition: background .4s ease;
 }
+
+
+/* REVERSE */
 
 .brand-section.reverse {
-    grid-template-columns: 40% 60%;
-}
-
-.brand-section.reverse .brand-image {
-    order: 2;
-}
-
-.brand-section.reverse .brand-info {
-    order: 1;
+    grid-template-columns: 42% 58%;
 }
 
 
-/* ---------- BRAND LOGO AREA ---------- */
+/* =========================================================
+   BRAND IMAGE
+========================================================= */
 
 .brand-image {
     position: relative;
-    overflow: hidden;
+
+    min-height: 85vh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle,
+            circle at center,
             #292929 0%,
-            #0d0d0d 70%
+            #151515 45%,
+            #0c0c0c 75%
         );
 }
 
-.brand-image::before,
+
+/* CIRCLE 1 */
+
+.brand-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border: 1px solid #303030;
+
+    border-radius: 50%;
+
+    transition:
+        transform .8s ease,
+        border-color .8s ease;
+}
+
+
+/* CIRCLE 2 */
+
 .brand-image::after {
     content: "";
 
     position: absolute;
 
-    border: 1px solid #292929;
-    border-radius: 50%;
-
-    transition: transform .8s ease,
-                border-color .8s ease;
-}
-
-.brand-image::before {
-    width: 450px;
-    height: 450px;
-}
-
-.brand-image::after {
     width: 650px;
     height: 650px;
 
-    border-color: #202020;
+    border: 1px solid #222;
+
+    border-radius: 50%;
+
+    transition:
+        transform 1s ease,
+        border-color 1s ease;
 }
+
+
+/* LOGO */
 
 .brand-image img {
     position: relative;
+
     z-index: 2;
 
     width: 55%;
-    max-width: 400px;
-    height: 250px;
+    max-width: 350px;
+    height: 220px;
 
     object-fit: contain;
 
@@ -683,44 +2497,55 @@ nav {
         filter .7s ease;
 }
 
+
+/* HOVER */
+
 .brand-section:hover .brand-image img {
-    transform: scale(1.2) rotate(-2deg);
+    transform: scale(1.15);
 
     filter:
         drop-shadow(
-            0 20px 30px rgba(255,255,255,.15)
+            0 20px 35px rgba(255,255,255,.15)
         );
 }
 
 .brand-section:hover .brand-image::before {
-    transform: scale(1.2);
+    transform: scale(1.15);
     border-color: #444;
 }
 
 .brand-section:hover .brand-image::after {
-    transform: scale(1.1);
+    transform: scale(1.08);
     border-color: #333;
 }
 
 
-/* ---------- BRAND INFO ---------- */
+/* =========================================================
+   BRAND INFORMATION
+========================================================= */
 
 .brand-info {
     position: relative;
+
+    min-height: 85vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 80px 60px;
+    padding: 80px;
 
     background: #111;
 }
 
+
+/* NUMBER */
+
 .brand-number {
     position: absolute;
-    top: 50px;
-    left: 60px;
+
+    top: 55px;
+    left: 80px;
 
     color: #444;
 
@@ -728,39 +2553,55 @@ nav {
     letter-spacing: 4px;
 }
 
-.brand-info h2 {
-    margin-bottom: 25px;
 
-    font-size: clamp(60px, 8vw, 130px);
-    line-height: .8;
+/* BRAND NAME */
+
+.brand-info h2 {
+    font-size: clamp(60px, 7vw, 115px);
+
+    line-height: .82;
+
     letter-spacing: -5px;
 
-    transition: transform .5s ease;
+    margin: 0 0 25px;
+
+    transition:
+        transform .5s ease,
+        letter-spacing .5s ease;
 }
 
 .brand-section:hover .brand-info h2 {
     transform: translateX(12px);
+
+    letter-spacing: -2px;
 }
+
+
+/* TAGLINE */
 
 .brand-info p {
-    color: #666;
+    color: #777;
 
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 4px;
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
+
+
+/* EXPLORE */
 
 .explore {
     width: fit-content;
 
-    color: #fff;
+    color: white;
 
     font-size: 11px;
     letter-spacing: 3px;
 
-    border-bottom: 1px solid #555;
     padding-bottom: 8px;
+
+    border-bottom: 1px solid #444;
 
     transition:
         padding .3s ease,
@@ -768,26 +2609,55 @@ nav {
 }
 
 .brand-section:hover .explore {
-    padding-right: 15px;
-    border-color: #fff;
+    padding-right: 18px;
+    border-color: white;
 }
 
 
 /* =========================================================
-   BRANDS — END
+   ALTERNATING BACKGROUNDS
+========================================================= */
+
+.brand-section:nth-of-type(2) .brand-info {
+    background: #111;
+}
+
+.brand-section:nth-of-type(3) .brand-info {
+    background: #151515;
+}
+
+.brand-section:nth-of-type(4) .brand-info {
+    background: #101010;
+}
+
+.brand-section:nth-of-type(5) .brand-info {
+    background: #151515;
+}
+
+.brand-section:nth-of-type(6) .brand-info {
+    background: #101010;
+
+}
+
+.brand-section:nth-of-type(7) .brand-info {
+    background: #151515;
+}
+
+
+/* =========================================================
+   END SECTION
 ========================================================= */
 
 .brands-end {
-    min-height: 75vh;
+    min-height: 70vh;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
 
     text-align: center;
-
-    padding: 100px 20px;
 
     border-top: 1px solid #1c1c1c;
 }
@@ -803,7 +2673,9 @@ nav {
 
 .brands-end h2 {
     font-size: clamp(55px, 9vw, 130px);
+
     line-height: .85;
+
     letter-spacing: -5px;
 
     margin-bottom: 50px;
@@ -814,501 +2686,22 @@ nav {
 }
 
 .brands-end a {
-    color: #fff;
+    color: white;
 
     font-size: 11px;
     letter-spacing: 4px;
 
-    border-bottom: 1px solid #fff;
     padding-bottom: 8px;
+
+    border-bottom: 1px solid white;
 }
 
 
 /* =========================================================
-   ABOUT PAGE
-========================================================= */
-
-.about-hero {
-    min-height: 90vh;
-
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-
-    padding: 80px 8%;
-}
-
-.background-text {
-    position: absolute;
-
-    left: -30px;
-    bottom: -40px;
-
-    font-size: 25vw;
-    font-weight: 900;
-    line-height: .7;
-
-    color: #151515;
-
-    pointer-events: none;
-}
-
-.about-hero-content {
-    position: relative;
-    z-index: 5;
-
-    max-width: 800px;
-}
-
-.about-label {
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-}
-
-.about-hero h1 {
-    font-size: clamp(55px, 8vw, 120px);
-    line-height: .88;
-    letter-spacing: -5px;
-
-    margin-bottom: 35px;
-}
-
-.about-hero h1 span {
-    color: #777;
-}
-
-.about-intro {
-    max-width: 500px;
-
-    color: #999;
-    font-size: 18px;
-    line-height: 1.7;
-
-    margin-bottom: 30px;
-}
-
-.scroll-button {
-    display: inline-block;
-
-    padding: 14px 22px;
-
-    border: 1px solid #444;
-    border-radius: 50px;
-
-    transition: .3s;
-}
-
-.scroll-button:hover {
-    background: #fff;
-    color: #000;
-}
-
-
-/* ---------- FLOATING SHOES ---------- */
-
-.floating-shoe {
-    position: absolute;
-
-    width: 300px;
-
-    opacity: .7;
-
-    pointer-events: none;
-
-    filter:
-        drop-shadow(
-            0 20px 30px rgba(0,0,0,.6)
-        );
-}
-
-.shoe-one {
-    right: 5%;
-    top: 15%;
-
-    transform: rotate(-20deg);
-
-    animation: floatOne 6s ease-in-out infinite;
-}
-
-.shoe-two {
-    right: 25%;
-    bottom: 5%;
-
-    width: 220px;
-
-    opacity: .4;
-
-    transform: rotate(15deg);
-
-    animation: floatTwo 7s ease-in-out infinite;
-}
-
-.shoe-three {
-    right: -5%;
-    bottom: 30%;
-
-    width: 180px;
-
-    opacity: .25;
-
-    transform: rotate(30deg);
-
-    animation: floatThree 8s ease-in-out infinite;
-}
-
-@keyframes floatOne {
-    0%, 100% {
-        transform: translateY(0) rotate(-20deg);
-    }
-
-    50% {
-        transform: translateY(-35px) rotate(-10deg);
-    }
-}
-
-@keyframes floatTwo {
-    0%, 100% {
-        transform: translateY(0) rotate(15deg);
-    }
-
-    50% {
-        transform: translateY(30px) rotate(5deg);
-    }
-}
-
-@keyframes floatThree {
-    0%, 100% {
-        transform: translateY(0) rotate(30deg);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(40deg);
-    }
-}
-
-
-/* ---------- STORY ---------- */
-
-.story {
-    min-height: 80vh;
-
-    display: grid;
-    grid-template-columns: 180px 1fr;
-
-    gap: 70px;
-
-    padding: 150px 12%;
-
-    border-top: 1px solid #1c1c1c;
-}
-
-.story-number {
-    color: #292929;
-
-    font-size: 80px;
-    font-weight: 900;
-}
-
-.story-content {
-    max-width: 800px;
-}
-
-.story-content h2 {
-    font-size: clamp(50px, 7vw, 100px);
-    line-height: .9;
-
-    margin-bottom: 40px;
-}
-
-.story-content p {
-    max-width: 650px;
-
-    color: #888;
-    font-size: 18px;
-    line-height: 1.8;
-
-    margin-bottom: 20px;
-}
-
-
-/* ---------- SHOE MARQUEE ---------- */
-
-.shoe-marquee {
-    overflow: hidden;
-
-    padding: 60px 0;
-
-    border-top: 1px solid #1c1c1c;
-    border-bottom: 1px solid #1c1c1c;
-
-    background: #151515;
-
-    transform: rotate(-2deg);
-}
-
-.marquee-track {
-    display: flex;
-    width: max-content;
-
-    animation: marquee 18s linear infinite;
-}
-
-.marquee-track img {
-    width: 220px;
-    height: 140px;
-
-    object-fit: contain;
-
-    margin: 0 30px;
-
-    filter: grayscale(1);
-
-    transition: .3s;
-}
-
-.marquee-track img:hover {
-    filter: grayscale(0);
-    transform: scale(1.15);
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-
-/* ---------- VALUES ---------- */
-
-.values {
-    padding: 150px 8%;
-}
-
-.values > h2 {
-    font-size: clamp(50px, 7vw, 100px);
-    line-height: .9;
-
-    margin-bottom: 80px;
-}
-
-.values h2 span {
-    color: #777;
-}
-
-.value-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.value-grid article {
-    min-height: 300px;
-
-    padding: 40px;
-
-    background: #151515;
-    border: 1px solid #222;
-
-    transition: .4s;
-}
-
-.value-grid article:hover {
-    transform: translateY(-10px);
-    background: #1d1d1d;
-}
-
-.value-grid span {
-    color: #555;
-
-    font-size: 13px;
-    letter-spacing: 3px;
-}
-
-.value-grid h3 {
-    margin: 70px 0 15px;
-
-    font-size: 35px;
-}
-
-.value-grid p {
-    color: #888;
-    line-height: 1.6;
-}
-
-
-/* ---------- ABOUT END ---------- */
-
-.about-end {
-    min-height: 70vh;
-
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    border-top: 1px solid #1c1c1c;
-}
-
-.end-shoe {
-    position: absolute;
-
-    width: 700px;
-    max-width: 80%;
-
-    opacity: .12;
-
-    transform: rotate(-15deg);
-
-    animation: finalFloat 5s ease-in-out infinite;
-}
-
-.about-end div {
-    position: relative;
-    z-index: 2;
-}
-
-.about-end p {
-    color: #777;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-}
-
-.about-end h2 {
-    font-size: clamp(50px, 8vw, 110px);
-    line-height: .9;
-    margin-bottom: 40px;
-}
-
-.about-end h2 span {
-    color: #777;
-}
-
-.about-end a {
-    border-bottom: 1px solid #fff;
-    padding-bottom: 5px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    color: #555;
-
-    font-size: 12px;
-
-    border-top: 1px solid #1c1c1c;
-}
-
-
-/* =========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 800px) {
-
-    /* NAV */
-
-    header {
-        padding: 20px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        gap: 20px;
-    }
-
-
-    /* HOME */
-
-    .home-hero {
-        min-height: 90vh;
-        padding: 50px 20px;
-
-        align-items: flex-start;
-    }
-
-    .home-content h1 {
-        font-size: 75px;
-        letter-spacing: -5px;
-    }
-
-    .main-shoe {
-        right: -100px;
-        bottom: 30px;
-
-        width: 90%;
-
-        opacity: .35;
-    }
-
-    .hero-side-text {
-        display: none;
-    }
-
-    .hero-scroll {
-        left: 20px;
-    }
-
-
-    /* INTRO */
-
-    .home-intro {
-        display: block;
-        padding: 100px 20px;
-    }
-
-    .intro-number {
-        margin-bottom: 50px;
-    }
-
-
-    /* FEATURED */
-
-    .home-featured {
-        padding: 100px 20px;
-    }
-
-    .featured-heading {
-        display: block;
-    }
-
-    .featured-heading a {
-        display: inline-block;
-        margin-top: 30px;
-    }
-
-    .featured-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-image {
-        height: 450px;
-    }
-
-
-    /* BRANDS */
 
     .brands-hero {
         min-height: 70vh;
@@ -1320,26 +2713,28 @@ footer {
         letter-spacing: -5px;
     }
 
+
+    /* Stack every brand */
+
     .brand-section,
     .brand-section.reverse {
         display: flex;
         flex-direction: column;
 
-        min-height: auto;
+        min-height: 0;
     }
 
-    .brand-section.reverse .brand-image,
-    .brand-section.reverse .brand-info {
-        order: initial;
-    }
+
+    /* Logo */
 
     .brand-image {
+        min-height: 55vh;
         height: 55vh;
     }
 
     .brand-image img {
         width: 65%;
-        height: 200px;
+        height: 180px;
     }
 
     .brand-image::before {
@@ -1352,9 +2747,13 @@ footer {
         height: 420px;
     }
 
+
+    /* Info */
+
     .brand-info {
-        min-height: 400px;
-        padding: 60px 30px;
+        min-height: 380px;
+
+        padding: 70px 30px;
     }
 
     .brand-number {
@@ -1367,76 +2766,14 @@ footer {
     }
 
 
-    /* ABOUT */
+    /* End */
 
-    .about-hero {
-        min-height: 80vh;
-        padding: 60px 20px;
-    }
-
-    .about-hero h1 {
-        letter-spacing: -3px;
-    }
-
-    .floating-shoe {
-        opacity: .2;
-    }
-
-    .shoe-one {
-        right: -100px;
-        top: 10%;
-    }
-
-    .shoe-two {
-        right: -50px;
-    }
-
-    .story {
-        display: block;
-        padding: 100px 20px;
-    }
-
-    .story-number {
-        margin-bottom: 40px;
-    }
-
-    .values {
-        padding: 100px 20px;
-    }
-
-    .value-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .value-grid article {
-        min-height: 250px;
-    }
-
-    .about-end {
+    .brands-end {
+        min-height: 60vh;
         padding: 80px 20px;
     }
 
-
-    /* GENERAL */
-
-    .page {
-        padding: 60px 20px;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+    .brands-end h2 {
+        font-size: 65px;
     }
 }
